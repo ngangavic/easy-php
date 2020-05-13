@@ -47,7 +47,7 @@ It has 4 functions.
 1. Set connection as explained above.
 2. **set_selectstatement("select sql statement")** You pass your sql statement using this function. 
 3. **set_data(array("put the data here"));** This functions accepts two types of data types(An array with the data and the word false). If you pass false it means there are no conditions in the select statement. If you pass data in array format it means there are conditions in the select statement . 
-4. **select_data()** This function executes the insert action and returns a failure of success message.
+4. **select_data()** This function executes the insert action and returns a failure of success message.-[see code](#select-data)
 
 
 
@@ -111,5 +111,24 @@ $update->set_updatestatement("UPDATE tbl_arrays SET name=?,age=?,location=? WHER
 $update->set_data(array("Vic","30","Uganda","15"));
 $update->update_data();
 echo $update->report;
+```
+#### Select data
+Include the connection and the **actions.php** file. Then set the required functions.
+Use ```$select->report``` to get the response after the execution.
+
+```php
+<?php 
+require "path to connection";
+require "../actions.php";
+
+$select->set_connection($conn);
+$select->set_selectstatement("SELECT * FROM tbl_arrays WHERE id=?");
+$select->set_data(array("3"));//pass data or use the next line of code
+//$select->set_data("false");//use this if there are is no data being passed
+$select->select_data();
+while($data=$select->report->fetch_array()){
+echo " id ".$data[0]." ";
+echo " name ".$data[1];
+}
 ```
 
