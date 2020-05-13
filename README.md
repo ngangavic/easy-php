@@ -1,5 +1,16 @@
 # easy-php
-PHP Data Access Object Library. Making PHP easy and fast to use
+PHP Data Access Object Library. Making PHP easy and fast to use.
+
+## How to use
+Download the library, extract and save it in your project folder. 
+
+Include the path to the **easy-php.php** file to the file you intend to use in your project.
+```php
+<?php 
+require "path to your connection file";
+require "path to easy-php.php file";
+...
+```
 
 ## Features
 1. Database connection.
@@ -59,7 +70,7 @@ Set the **hostname**, **database name**, **username**, **password** then call th
 
 ```php
 <?php 
-require "../connection/Dbconnection.php";
+require "path to Dbconnection.php";
 $db=new Dbconnection();
 $db->set_hostname("localhost");
 $db->set_databasename("websample");
@@ -73,8 +84,8 @@ Use ```$delete->report``` to get the response after the execution.
 
 ```php
 <?php 
-require "path to you connection file";
-require "../actions.php";
+require "path to your connection file";
+require "path to easy-php.php file";
 
 $delete->set_connection($conn);//set the connection
 $delete->set_deletestatement("DELETE FROM tbl_arrays WHERE id=?");//pass the sql statement
@@ -88,8 +99,8 @@ Use ```$insert->report``` to get the response after the execution.
 
 ```php
 <?php 
-require "path to connection";
-require "../actions.php";
+require "path to your connection file";
+require "path to easy-php.php file";
 
 $insert->set_connection($conn);
 $insert->set_insertstatement("INSERT INTO tbl_arrays(name,age,location)VALUES(?,?,?)");
@@ -103,8 +114,8 @@ Use ```$update->report``` to get the response after the execution.
 
 ```php
 <?php 
-require "path to connection";
-require "../actions.php";
+require "path to your connection file";
+require "path to easy-php.php file";
 
 $update->set_connection($conn);
 $update->set_updatestatement("UPDATE tbl_arrays SET name=?,age=?,location=? WHERE id=?");
@@ -118,8 +129,8 @@ Use ```$select->report``` to get the response after the execution.
 
 ```php
 <?php 
-require "path to connection";
-require "../actions.php";
+require "path to your connection file";
+require "path to easy-php.php file";
 
 $select->set_connection($conn);
 $select->set_selectstatement("SELECT * FROM tbl_arrays WHERE id=?");
