@@ -34,6 +34,13 @@ It has 4 functions.
 3. **set_data(array("put the data here"));** This function lets you pass the data to the prepared statement. Data is passed in array format. 
 4. **insert_data()** This function executes the insert action and returns a failure of success message.
 
+**UPDATE functions**
+It has 4 functions. 
+1. Set connection as explained above.
+2. **set_updatestatement("update sql statement")** You pass your sql statement using this function. 
+3. **set_data(array("put the data here"));** This function lets you pass the data to the prepared statement. Data is passed in array format. 
+4. **update_data()** This function executes the insert action and returns a failure of success message.
+
 
 
 ##### 1. Database connection
