@@ -39,7 +39,8 @@ It has 4 functions.
 1. Set connection as explained above.
 2. **set_updatestatement("update sql statement")** You pass your sql statement using this function. 
 3. **set_data(array("put the data here"));** This function lets you pass the data to the prepared statement. Data is passed in array format. 
-4. **update_data()** This function executes the insert action and returns a failure of success message.
+4. **update_data()** This function executes the insert action and returns a failure of success message.-[see code](#update-data)
+
 
 **SELECT functions**
 It has 4 functions. 
@@ -90,10 +91,25 @@ Use ```$insert->report``` to get the response after the execution.
 require "path to connection";
 require "../actions.php";
 
-// $insert=new Insert();
 $insert->set_connection($conn);
 $insert->set_insertstatement("INSERT INTO tbl_arrays(name,age,location)VALUES(?,?,?)");
 $insert->set_data(array("Victor","20","Kenya"));
 $insert->insert_data();
 echo $insert->report;
 ```
+#### Update data
+Include the connection and the **actions.php** file. Then set the required functions.
+Use ```$update->report``` to get the response after the execution.
+
+```php
+<?php 
+require "path to connection";
+require "../actions.php";
+
+$update->set_connection($conn);
+$update->set_updatestatement("UPDATE tbl_arrays SET name=?,age=?,location=? WHERE id=?");
+$update->set_data(array("Vic","30","Uganda","15"));
+$update->update_data();
+echo $update->report;
+```
+
