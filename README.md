@@ -25,7 +25,7 @@ It has 4 functions.
 1. Set connection as explained above.
 2. **set_deletestatement("delete sql statement")** You pass your sql statement using this function. 
 3. **set_data(array("put the data here"));** This function lets you pass the data to the prepared statement. Data is passed in array format. 
-4. **delete_data()** This function executes the delete action and returns a failure of success message.
+4. **delete_data()** This function executes the delete action and returns a failure of success message. -[see code](#delete-data)
 
 **INSERT functions**
 It has 4 functions. 
@@ -66,7 +66,7 @@ $db->set_username("root");
 $db->set_password("");
 $conn=$db->get_connection();
 ```
-#### 2.Delete data
+#### Delete data
 Include the connection and the **actions.php** file. Then set the required functions.
 Use ```$delete->report``` to get the response after the execution.
 
