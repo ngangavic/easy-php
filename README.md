@@ -32,7 +32,7 @@ It has 4 functions.
 1. Set connection as explained above.
 2. **set_insertstatement("insert sql statement")** You pass your sql statement using this function. 
 3. **set_data(array("put the data here"));** This function lets you pass the data to the prepared statement. Data is passed in array format. 
-4. **insert_data()** This function executes the insert action and returns a failure of success message.
+4. **insert_data()** This function executes the insert action and returns a failure of success message.-[see code](#insert-data)
 
 **UPDATE functions**
 It has 4 functions. 
@@ -81,4 +81,19 @@ $delete->set_data(array("1"));//pass data
 $delete->delete_data();//execute
 echo $delete->report;//get the response
 ```
+#### Insert data
+Include the connection and the **actions.php** file. Then set the required functions.
+Use ```$insert->report``` to get the response after the execution.
 
+```php
+<?php 
+require "path to connection";
+require "../actions.php";
+
+// $insert=new Insert();
+$insert->set_connection($conn);
+$insert->set_insertstatement("INSERT INTO tbl_arrays(name,age,location)VALUES(?,?,?)");
+$insert->set_data(array("Victor","20","Kenya"));
+$insert->insert_data();
+echo $insert->report;
+```
