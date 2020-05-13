@@ -41,6 +41,14 @@ It has 4 functions.
 3. **set_data(array("put the data here"));** This function lets you pass the data to the prepared statement. Data is passed in array format. 
 4. **update_data()** This function executes the insert action and returns a failure of success message.
 
+**SELECT functions**
+It has 4 functions. 
+1. Set connection as explained above.
+2. **set_selectstatement("select sql statement")** You pass your sql statement using this function. 
+3. **set_data(array("put the data here"));** This functions accepts two types of data types(An array with the data and the word false). If you pass false it means there are no conditions in the select statement. If you pass data in array format it means there are conditions in the select statement . 
+4. **select_data()** This function executes the insert action and returns a failure of success message.
+
+
 
 
 ##### 1. Database connection
